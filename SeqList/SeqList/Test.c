@@ -18,8 +18,44 @@ void TestSL1()
 
 	SLDestroy(&sl);
 }
+
+void TestSL2()
+{
+	SL sl;
+	SLInit(&sl);
+	SLPushFront(&sl, 1);
+	SLPushFront(&sl, 2);
+	SLPushFront(&sl, 3);
+	SLPushFront(&sl, 4);
+	SLPushFront(&sl, 5);
+	SLPushFront(&sl, 6);
+	SLPushFront(&sl, 7);
+	SLPushFront(&sl, 8);
+
+	SLPrint(&sl);
+
+	SLInsert(&sl, 5, 20);
+	SLInsert(&sl, 5, 30);
+	SLInsert(&sl, 5, 40);
+	SLInsert(&sl, 5, 50);
+
+
+	SLPrint(&sl);
+
+	SLErase(&sl, 5);
+	SLErase(&sl, 5);
+	SLErase(&sl, 5);
+	SLErase(&sl, 5);
+	SLPrint(&sl);
+
+//	int x = SLFind(&sl, 5);
+//	printf("%d\n", x);
+	SLDestroy(&sl);
+
+}
 int main()
 {
-	TestSL1();
+
+	TestSL2();
 	return 0;
 }

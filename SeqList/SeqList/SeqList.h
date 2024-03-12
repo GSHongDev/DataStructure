@@ -15,8 +15,15 @@ typedef struct SeqList
 void SLInit(SL* psl);//≥ı ºªØ
 void SLDestroy(SL* psl);//œ˙ªŸ
 void SLCheckCapacity(SL* psl);//¿©»›
-void SLPrint(SL* psl);
+void SLPrint(SL* psl);//¥Ú”°
 
 
 void SLPushBack(SL* psl, SLDataType x);//Œ≤≤Â
+void SLPopBack(SL* psl);//Œ≤…æ
+void SLPushFront(SL* psl, SLDataType x);//Õ∑≤Â
+void SLPopFront(SL* psl);//Õ∑…æ
 
+void SLInsert(SL* psl, size_t pos, SLDataType x);
+void SLErase(SL* psl, size_t pos);
+
+int SLFind(SL* psl, SLDataType x);
