@@ -149,3 +149,28 @@ void SLLInsert(SLLNode** pphead, SLLNode* pos, SLLDataType x)
 		// 如果pos不在链表中，这里可以添加额外的处理代码
 	}
 }
+
+void SLLErase(SLLNode** pphead, SLLNode* pos)
+{
+	assert(pphead);
+	assert(*pphead);
+	assert(pos);
+	
+	if (*pphead == pos)
+	{
+		SLLPopFront(pphead);
+	}
+
+	else
+	{
+		SLLNode* prev = *pphead;
+		while (prev->next != pos)
+		{
+			prev = prev->next;
+		}
+		prev->next = pos->next;
+		free(pos);
+		pos = NULL;
+	}
+
+}

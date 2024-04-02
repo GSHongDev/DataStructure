@@ -65,10 +65,14 @@ void Test4()
 {
 	SLLNode* plist = NULL;
 	SLLInsert(&plist, NULL, 1);
-	SLLInsert(&plist, NULL, 2);
-	SLLInsert(&plist, NULL, 3);
-	SLLInsert(&plist, NULL, 4);
-	SLLInsert(&plist, NULL, 5);
+	SLLPushFront(&plist, 1);
+	SLLPushFront(&plist, 2);
+	SLLPushFront(&plist, 3);
+	SLLPushFront(&plist, 4);
+	SLLPushFront(&plist, 5);
+
+	SLLErase(&plist, );
+	
 	SLLPrint(plist);
 }
 int main()

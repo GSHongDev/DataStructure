@@ -1,2 +1,6 @@
 ﻿  SLList.c
+  Test.c
+E:\Course\DataStructure\SLList\SLList\Test.c(25,2): warning C4098: “Test1”:“void”函数返回值
+E:\Course\DataStructure\SLList\SLList\Test.c(49,2): warning C4098: “Test2”:“void”函数返回值
+  正在生成代码...
   SLList.vcxproj -> E:\Course\DataStructure\SLList\x64\Debug\SLList.exe
