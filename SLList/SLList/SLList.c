@@ -174,3 +174,19 @@ void SLLErase(SLLNode** pphead, SLLNode* pos)
 	}
 
 }
+
+void SLLDestroy(SLLNode** pphead) 
+{
+	SLLNode* current = *pphead;
+	SLLNode* next;
+
+	while (current != NULL) {
+		next = current->next;
+		free(current);
+		current = next;
+	}
+
+	*pphead = NULL;
+
+	printf("单链表销毁成功\n");
+}

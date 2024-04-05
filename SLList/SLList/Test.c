@@ -71,9 +71,9 @@ void Test4()
 	SLLPushFront(&plist, 4);
 	SLLPushFront(&plist, 5);
 
-	SLLErase(&plist, );
 	
 	SLLPrint(plist);
+	SLLDestroy(&plist);
 }
 int main()
 {
