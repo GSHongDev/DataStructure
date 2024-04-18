@@ -188,5 +188,5 @@ void SLLDestroy(SLLNode** pphead)
 
 	*pphead = NULL;
 
-	printf("单链表销毁成功\n");
+	//printf("单链表销毁成功\n");
 }
