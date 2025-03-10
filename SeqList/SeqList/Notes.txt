@@ -1,0 +1,9 @@
+用于记录笔记
+
+typedef int SLDataType;//顺序表的数据类型
+typedef struct SeqList 
+{
+	SLDataType* a;
+	int size;		//有效数据个数
+	int capacity;	//空间容量
+}SL;
