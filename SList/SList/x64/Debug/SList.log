@@ -1,2 +1,5 @@
-﻿  Test.c
-  SList.vcxproj -> D:\DataStructure\SList\x64\Debug\SList.exe
+﻿  SList.c
+D:\source\DataStructure\SList\SList\SList.c(20,3): warning C4550: 表达式计算为缺少参数列表的函数
+D:\source\DataStructure\SList\SList\SList.c(131,3): warning C4098: “SLTInsert”:“void”函数返回值
+D:\source\DataStructure\SList\SList\SList.c(146,2): warning C4098: “SLTInsert”:“void”函数返回值
+  SList.vcxproj -> D:\source\DataStructure\SList\x64\Debug\SList.exe
