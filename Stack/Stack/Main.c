@@ -1,24 +1,47 @@
 #include "Stack.h"
-
-void Test1()
+// 测试用例函数
+void testStack() 
 {
-	ST S;
-	STInit(&S);
-	STPush(&S, 1);
-	STPrint(S);
-	STPush(&S, 2);
-	STPrint(S);
-	STPush(&S, 3);
-	STPush(&S, 4);
-	STPrint(S);
-	STPop(&S);
-	STPrint(S);
-	STPush(&S, 5);
+    ST st;
+    // 初始化栈
+    STInit(&st);
 
-	STDestroy(&S);
+    // 测试栈是否为空
+    assert(STEmpty(&st) == true);
+
+    // 入栈操作
+    STPush(&st, 1);
+    STPush(&st, 2);
+    STPush(&st, 3);
+
+    // 测试栈的大小
+    assert(STSize(&st) == 3);
+
+    // 测试栈顶元素
+    assert(STTop(&st) == 3);
+
+    // 出栈操作
+    STPop(&st);
+    assert(STSize(&st) == 2);
+    assert(STTop(&st) == 2);
+
+    // 再次出栈
+    STPop(&st);
+    assert(STSize(&st) == 1);
+    assert(STTop(&st) == 1);
+
+    // 再次出栈
+    STPop(&st);
+    assert(STSize(&st) == 0);
+    assert(STEmpty(&st) == true);
+
+    // 销毁栈
+    STDestroy(&st);
 }
+
 int main()
 {
-	Test1();
+    testStack();
+    printf("Stack Test Passed!\n");
 	return 0;
 }

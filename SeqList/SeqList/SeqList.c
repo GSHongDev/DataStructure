@@ -4,7 +4,6 @@ void SLInit(SL* psl)
 {
 	assert(psl);
 
-
 	psl->a = NULL;
 	psl->size = 0;
 	psl->capacity = 0;

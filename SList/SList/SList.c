@@ -117,36 +117,35 @@ SLNode* SLTFind(SLNode* phead, SLNDataType x)
 
 void SLTInsert(SLNode** pphead, SLNode* pos, SLNDataType x)
 {
-	assert(pphead);//pphead是链表plist的地址，不可能为空
-
-	//if (NULL == pos)
-	//{
-	//	return NULL;
-	//}
-
-	//如果pos不为空，那么*pphead也不能为空
+	// 确保 pphead 不为 NULL
+	assert(pphead);
+	// 确保 pos 和 *pphead 不为 NULL
 	assert(pos && *pphead);
-	assert(pos);
 
 	if (*pphead == pos)
 	{
+		// 如果 pos 是头节点，直接调用头插函数
 		SLTPushFront(pphead, x);
-		return *pphead;
 	}
-
-	SLNode* prev = *pphead;
-	while (NULL != prev && prev->next != pos)
+	else
 	{
-		prev = prev->next;
-	}
-	if (prev != NULL)
-	{
-		SLNode* newnode = CreatNode(x);
-		prev->next = newnode;
-		newnode->next = pos;
-	}
+		SLNode* prev = *pphead;
+		// 查找 pos 的前一个节点
+		while (prev != NULL && prev->next != pos)
+		{
+			prev = prev->next;
+		}
 
-	return NULL;
+		// 确保找到了 pos 的前一个节点
+		if (prev != NULL)
+		{
+			// 创建新节点
+			SLNode* newnode = CreatNode(x);
+			// 插入新节点
+			newnode->next = prev->next;
+			prev->next = newnode;
+		}
+	}
 }
 
 void SLTErase(SLNode** pphead, SLNode* pos)
@@ -177,7 +176,58 @@ void SLTErase(SLNode** pphead, SLNode* pos)
 	}
 }
 
-void SLTDestroy(SLNode** phead)
+void SLTDestroy(SLNode** pphead)
 {
+	assert(pphead);
+	SLNode* cur = *pphead;
+	while (cur)
+	{
+		SLNode* next = cur->next;
+		free(cur);
+		cur = next;
+	}
+	*pphead = NULL;
+}
 
+// 辅助函数：检查链表是否为空
+bool LTEmpty(SLNode* phead) 
+{
+	return phead == NULL;
+}
+
+// 辅助函数：获取链表长度
+size_t LTSize(SLNode* phead) 
+{
+	size_t length = 0;
+	SLNode* current = phead;
+	while (current != NULL) 
+	{
+		length++;
+		current = current->next;
+	}
+
+	return length;
+}
+
+// 反转链表函数
+SLNode* SLTReverseList(SLNode* head)
+{
+	if (head == NULL || head->next == NULL) 
+	{
+		return head;
+	}
+
+	SLNode* prev = NULL;
+	SLNode* curr = head;
+	SLNode* next = NULL;
+
+	while (curr != NULL) 
+	{
+		next = curr->next;
+		curr->next = prev;
+		prev = curr;
+		curr = next;
+	}
+
+	return prev;
 }

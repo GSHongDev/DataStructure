@@ -18,6 +18,9 @@
     <ClInclude Include="SList.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="TestSLT.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SList.c">
@@ -26,8 +29,8 @@
     <ClCompile Include="Test.c">
       <Filter>源文件</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="SingleLinkedList.md" />
+    <ClCompile Include="TestSLT.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

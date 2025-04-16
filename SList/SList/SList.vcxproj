@@ -129,13 +129,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="SList.h" />
+    <ClInclude Include="TestSLT.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SList.c" />
     <ClCompile Include="Test.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="SingleLinkedList.md" />
+    <ClCompile Include="TestSLT.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
